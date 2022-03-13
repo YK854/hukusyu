@@ -1,0 +1,22 @@
+<h1>Books#edit</h1>
+<p>Find me in app/views/books/edit.html.erb</p>
+    <%= form_with model:@book, url:book_path, local:true do |f| %>
+      <table>
+          <tr>
+            <th><%= f.label :image %></th>
+            <td><%= f.attachment_field :image %></td>
+          </tr>
+          <tr>
+            <th><%= f.label :title %></th>
+            <td><%= f.text_field :title %></td>
+          </tr>
+          <tr>
+            <th><%= f.label :body %></th>
+            <td><%= f.text_area :body %></td>
+          </tr>
+      </table>
+      <%= f.submit '変更を保存' %>
+    <% end %>
+<div>
+  <%= link_to '戻る', book_path(@book.id) %>
+</div>

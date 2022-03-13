@@ -1,0 +1,19 @@
+<h1>Books#show</h1>
+<p>Find me in app/views/books/show.html.erb</p>
+<table>
+  <tr>
+    <th>投稿画像</th>
+    <td><%= attachment_image_tag @book, :image, size: '100x60' %></td>
+  </tr>
+  <tr>
+    <th投稿タイトル></th>
+    <td><%= @book.title %></td>
+  </tr>
+  <tr>
+    <th>投稿説明</th>
+    <td><%= @book.body %></td>
+  </tr>
+</table>
+<div>
+  <%= link_to '編集', edit_book_path(@book.id) %>
+</div>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HUKUSYU</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if user_signed_in? %>
+        <%= link_to 'topへ', root_path %>
+        <%= link_to '新規投稿', new_book_path %>
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to 'topへ', root_path %>
+        <%= link_to '新規投稿', new_book_path %>
+        <%= link_to 'ログイン', user_session_path %>
+        <%= link_to '新規登録', new_user_registration_path %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

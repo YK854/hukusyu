@@ -1,0 +1,20 @@
+<h4>新規投稿</h4>
+<table>
+  <%= form_with model:@book, url:books_path, local:true do |f| %>
+    <tr>
+      <th><%= f.label :image %></th>
+      <td><%= f.attachment_field :image %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :title %></th>
+      <td><%= f.text_field :title %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :body %></th>
+      <td><%= f.text_area :body %></td>
+    </tr>
+    <tr>
+      <td><%= f.submit '返信' %></td>
+    </tr>
+  <% end %>
+</table>
